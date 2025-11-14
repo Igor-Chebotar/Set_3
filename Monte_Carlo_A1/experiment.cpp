@@ -61,10 +61,12 @@ int main() {
     double y_max_wide = 3.0;
 
     // Узкая область (примерные границы пересечения)
-    double x_min_narrow = 1.0;
-    double x_max_narrow = 2.0;
-    double y_min_narrow = 1.0;
-    double y_max_narrow = 2.0;
+    double r_avg = (1.0 + std::sqrt(5.0)/2.0 + std::sqrt(5.0)/2.0) / 3.0;
+    double margin = r_avg * 0.5;
+    double x_min_narrow = 1.0 - margin;
+    double x_max_narrow = 2.0 + margin;
+    double y_min_narrow = 1.0 - margin;
+    double y_max_narrow = 2.0 + margin;
 
     // Открываем файлы для записи
     std::ofstream wide_file("Monte_Carlo_A1/data/wide_area.csv");
